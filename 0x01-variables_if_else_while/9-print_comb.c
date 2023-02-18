@@ -1,20 +1,22 @@
 #include <stdio.h>
+/**
+ * main - Entry point
+ * Return: 0 (success)
+ */
 
 int main(void)
 {
-    int x = 0;
+	int a;
 
-    while (x < 10)
-    {
-        printf("%d", x);
-        if (x < 9)
-        {
-            printf(", ");
-        }
-        x++;
-    }
-    printf("\n");
-
-    return (0);
+	for (a = 0; a < 10; a++)
+{
+	putchar(a + '0');
 }
-
+if (a < 9)
+{
+	putchar(',');
+	putchar(' ');
+}
+putchar('\n');
+return (0);
+}
