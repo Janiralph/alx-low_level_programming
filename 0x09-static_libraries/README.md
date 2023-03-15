@@ -1,1 +1,11 @@
-0x09-static libraries
+0x09. C - Static libraries
+In C programming, a static library is a collection of object files that are combined into a single file. This file can then be linked with other object files to create an executable program.
+A static library is often referred to as a ".a" file, as this is the typical file extension used for such libraries on Unix-like systems. Static libraries are created using the "ar" (archive) utility, which combines the object files into a single file and adds some metadata to facilitate linking.
+One advantage of using static libraries is that they are self-contained and do not require any additional files to be present at runtime. This can be useful for distributing programs, as it makes it easier to ensure that all necessary components are included.
+On the other hand, static libraries have some drawbacks as well. One issue is that they can increase the size of the resulting executable, as all of the object files are included in the final binary. This can be a problem if the library is large or if multiple programs use the same library, as it can lead to duplication of code. In such cases, it may be more efficient to use a shared library, which is a separate file that can be shared by multiple programs at runtime.
+
+"ar" - This command is used to create and modify static libraries. It can be used to add object files to an existing library, extract files from a library, or perform other operations.
+"ranlib" - This command is used to generate an index for a static library. This index can be used by the linker to more quickly locate the object files within the library.
+"gcc" - This is the GNU Compiler Collection, which includes a C compiler as well as other tools. It can be used to compile C source files into object files, and it can also be used to link object files and libraries into an executable program.
+"ld" - This is the GNU linker, which can be used to link object files and libraries into an executable program. It can be invoked directly or used through the gcc compiler as part of the compilation process.
+"objdump" - This command can be used to display the contents of object files and libraries. It can be used to inspect the symbols (e.g., function names) that are defined in a library, or to disassemble the machine code contained in an object file.
