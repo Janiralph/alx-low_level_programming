@@ -1,7 +1,7 @@
 #include "list.h"
 
 /**
- * delete_nodeint_at_index - deletes a node
+ * delete_nodeint_at_index - delete node
  * @head: head node
  * @index: index of node to be deleted
  * Return: boolean value
