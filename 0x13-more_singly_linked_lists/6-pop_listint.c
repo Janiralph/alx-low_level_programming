@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * pop_listint - pops a new node
+ * pop_listint - pops node
  * @head: list address
- * Return: head node info
+ * Return: head node data
  */
 
 int pop_listint(listint_t **head)
