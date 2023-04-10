@@ -6,15 +6,17 @@
  * @m: quantity to flip number to
  * Return: bits needed to flip from a number to another
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int xor = n ^ m, bits = 0;
+	unsigned long int difference = n ^ m;
+	unsigned int counter = 0;
 
-	while (xor > 0)
+	while (difference)
 	{
-		bits += (xor &);
-		xor >>= 1;
+		counter += difference & 1;
+		difference >>= 1;
 	}
 
-	return (bits);
+	return (counter);
 }
