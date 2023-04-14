@@ -1,43 +1,32 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-
 /**
- * creat_file - create file and write into file
- * @filename: name of file
- * @text_content: text to be written
- * Description: creates a file and writes on it
- * Return: status
+ * create_file - creates a file
+ * @filename: name of the file
+ * @text_content: content to put in the file
+ * Return: 1 on success and -1 on failure
  */
-
 int create_file(const char *filename, char *text_content)
 {
-	int fd = open(filename, 0_WRONLY | 0_trunc, 0600);
-	int len = 0;
-	ssize_t byes_written = write(fd, text_content, len);
+	FILE *fp;
+	int i = 0;
 
 	if (filename == NULL)
-	{
 		return (-1);
-	}
-	if (fd == -1)
-	{
-		return (-);
-	}
-	if (text content != NULL)
-	{
-		while (text_content[len] != '\0')
-		{
-			len++;
-		}
 
-		if (bytes_written != len)
-		{
-			close(fd);
-			return (-1);
-		}
+	if (text_content == NULL)
+		text_content = "";
+	fp = fopen(filename, "w");
+
+	if ((fp = NULL))
+		return (-1);
+	chmod(filename, 0600);
+
+	while (text_content[i] != '\0')
+	{
+		putc(text_content[i], fp);
+		i++;
 	}
-	close(fd);
+	fclose(fp);
 	return (1);
 }
